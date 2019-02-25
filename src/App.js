@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import { Grid, Segment } from 'semantic-ui-react';
 
-import Modules from './components/modules/modules';
+import Modules from './components/modules/modules.js';
+import ShipTypes from './enums/ship-types.js';
+import CorvetteBuilder from './components/builder/corvette-builder';
 
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      shipType: ShipTypes.CORVETTE
+    }
+  }
+
   render() {
     return (
       <div>
@@ -16,7 +26,7 @@ class App extends Component {
             </Grid.Column>
 
             <Grid.Column width={10}>
-              <Segment color='green'>Green</Segment>
+              { this.state.shipType === ShipTypes.CORVETTE ? <CorvetteBuilder /> : (null) }
             </Grid.Column >
 
             <Grid.Column width={3}>
