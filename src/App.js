@@ -22,7 +22,7 @@ class App extends Component {
         <Grid>
           <Grid.Row>
             <Grid.Column width={3} >
-              <Modules/>
+              <Modules />
             </Grid.Column>
 
             <Grid.Column width={10}>
